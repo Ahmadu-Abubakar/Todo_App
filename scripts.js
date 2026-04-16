@@ -11,7 +11,7 @@ button.addEventListener("click", () => {
     const email = emailInput.value
     const password = passwordInput.value
     
-    if (email === " " || password === "") {
+    if (email === "" || password === "") {
         message.textContent = "fill the all the fields";
         return
     }else{
