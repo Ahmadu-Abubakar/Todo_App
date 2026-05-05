@@ -8,41 +8,29 @@
 </head>
 <body>
     <div class="main_container">
-
+        
         <div class="todo_card">
 
             <h1 class="title">
                 Todo App
             </h1>
 
-            <input class="search_box" type="text" name="new_task" id="new_task" placeholder="Add new task here">
+            <input class="search_box" type="text" id="taskInput" placeholder="Enter Task ">
             <div class="tasks">
-
-                <div class="task">
-                    <input type="checkbox">
-                    learning Django
-                    <hr>
-                    <time datetime="">2:00pm</time>
-                </div>
                 
                 <div class="task">
-                    <input type="checkbox">
-                    prayer
+                    
+                    <div id="taskList"> </div>
                     <hr>
-                    <time datetime="">2:00pm</time>
+                    <time id="time"></time>
                 </div>
-                <div class="task">
-                    <input class="check_box"  type="checkbox">
-                    learning frontend
-                    <hr>
-                    <time datetime="">2:00pm</time>
-                </div>
-            </div>
 
-            <button class="task_btn">
+            <button id="addBtn" class="task_btn">
                 Add New Task
             </button>
     </div>
-    </div>
+</div>
+
+<script type="module" src="dashboard.js"></script>
 </body>
 </html>

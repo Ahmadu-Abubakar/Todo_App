@@ -43,7 +43,7 @@ body{
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 .search_box {
-    max-width: 90%;
+    max-width: 100%;
     padding: 12px;
     margin-top: 5px;
     border-radius: 10px;
@@ -67,3 +67,10 @@ time{
     padding: 12px;
 }
 
+#deleteBtn{
+    padding: 8px;
+    font-size: 30px;
+    color: #000000;
+    border-radius: 60px;
+    cursor: pointer;
+}

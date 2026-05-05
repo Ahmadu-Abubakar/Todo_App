@@ -4,8 +4,6 @@ async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-
-  
   const res = await fetch("https://todo-app-backend-xcfq.onrender.com/api/token/", {
     method: "POST",
     headers: {
@@ -13,7 +11,7 @@ async function login() {
     },
     body: JSON.stringify({ 
       username : username, 
-      password :password
+      password : password
     })
   });
   
@@ -21,29 +19,37 @@ async function login() {
   
   localStorage.setItem("access", data.access);
   localStorage.setItem("refresh", data.refresh);
-
-  console.log(data)
-  
-  console.log("Logged in");
-  console.log(password)
-  console.log(username)
+  return data;
 }
 
 
-// async function getTasks() {
-//   const token = localStorage.getItem("access");
 
-//   const res = await fetch("https://your-backend-url/api/tasks/", {
-//     headers: {
-//       "Authorization": `Bearer ${token}`
-//     }
-//   });
+if (button){
 
-//   const data = await res.json();
-//   console.log(data);
-// }
-
-// button.addEventListener("click", () => {
-//   login()
-// })
-
+  button.addEventListener("click", async () => {
+  
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+  
+    if (username === "" || password === "") {
+      message.textContent = "username or password can't be Empty!!";
+      message.style.color = "red";
+      return;
+    }
+  
+    const data = await login();
+  
+    if (data.access) {
+      message.textContent = "Login successfully !";
+      message.style.color = "green";
+    } else {
+      message.textContent = "Login failed !!";
+      message.style.color = "red";
+    }
+    setTimeout(() => {
+      window.location.href = "todo.html";
+    }, 1000);
+  
+  });
+}
